@@ -1,4 +1,4 @@
 public static class Globals
 {
-    public static float gameSpeed = 2.0f;
+    public static bool isPaused = true;
 }

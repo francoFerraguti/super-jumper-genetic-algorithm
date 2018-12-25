@@ -4,10 +4,10 @@ public class Ball : MonoBehaviour
 {
     //variables
     private float speed;
-    private float acceleration = 0.08f;
+    private float acceleration = 0.004f;
 
     //constants
-    private float startingSpeed = 180.0f;
+    private float startingSpeed = 6.0f;
 
     void Awake()
     {
@@ -16,8 +16,13 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.forward * Time.deltaTime * speed * Globals.gameSpeed);
-        speed += acceleration * Globals.gameSpeed;
+        if (Globals.isPaused)
+        {
+            return;
+        }
+
+        transform.Rotate(Vector3.forward * speed);
+        speed += acceleration;
     }
 
     public void ResetRotation()

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public static class ScoreManager
 {
-    private static int score = 0;
+    public static int score = 0;
 
     public static void Add(int value)
     {
